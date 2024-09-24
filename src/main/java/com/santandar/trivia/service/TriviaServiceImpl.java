@@ -1,8 +1,8 @@
 package com.santandar.trivia.service;
 
+import com.santandar.trivia.dto.ExternalAPIResponse;
 import com.santandar.trivia.dto.TriviaGameReplyRequest;
 import com.santandar.trivia.dto.TriviaGameStartResponse;
-import com.santandar.trivia.dto.ExternalAPIResponse;
 import com.santandar.trivia.model.Trivia;
 import com.santandar.trivia.repo.TriviaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TriviaServiceImpl implements TriviaService {

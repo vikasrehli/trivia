@@ -1,14 +1,10 @@
 package com.santandar.trivia.service;
 
 import com.santandar.trivia.dto.TriviaGameReplyRequest;
-import com.santandar.trivia.dto.TriviaGameReplyResponse;
 import com.santandar.trivia.dto.TriviaGameStartResponse;
 import com.santandar.trivia.model.Trivia;
-import org.springframework.http.HttpStatus;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import java.util.Map;
 import java.util.Optional;
 
 public interface TriviaService {

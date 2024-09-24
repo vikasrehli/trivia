@@ -4,6 +4,7 @@ import com.santandar.trivia.dto.ApiResponse;
 import com.santandar.trivia.dto.TriviaGameReplyRequest;
 import com.santandar.trivia.dto.TriviaGameReplyResponse;
 import com.santandar.trivia.dto.TriviaGameStartResponse;
+import com.santandar.trivia.exception.CustomException;
 import com.santandar.trivia.service.TriviaService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.*;
-
-import static org.springframework.http.HttpStatus.OK;
+import static org.springframework.http.HttpStatus.*;
 
 @RestController
 @RequestMapping("/trivia")
@@ -36,8 +35,8 @@ public class TriviaController {
                     .build();
 
             return ResponseEntity.ok(apiResponse);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        } catch (Exception ex){
+            throw new CustomException(NOT_FOUND.value(),"No such question!");
         }
     }
 
