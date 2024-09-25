@@ -1,7 +1,12 @@
 Feature: Trivia Game
+  As a trivia player,
+  I want to answer trivia questions,
+  So that I can test my knowledge and track my performance.
+
+  Background:
+    Given the trivia game service is available
 
   Scenario: Start a new trivia game
-    Given the trivia game service is available
     When I start a new trivia game
     Then I should receive a random trivia question with possible answers
 
